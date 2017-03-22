@@ -3,11 +3,14 @@ package com.retailio.email.connector;
 
 import com.retailio.email.handler.EmailHandler;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.validation.Valid;
+import javax.ws.rs.*;
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 @Path("/email")
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class EmailConnector {
 
     private final EmailHandler emailHandler;
@@ -16,10 +19,9 @@ public class EmailConnector {
         this.emailHandler = emailHandler;
     }
 
-    @GET
-    @Produces("text/plain")
-    public String hello() {
+    @POST
+    public Response deliverEmail(@Valid EmailDto emailDto) {
         emailHandler.handleEmail();
-        return "hello";
+        return Response.status(Response.Status.NO_CONTENT).build();
     }
 }

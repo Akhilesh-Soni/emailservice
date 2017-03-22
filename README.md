@@ -3,6 +3,8 @@
 
 mvn archetype:generate -DgroupId=com.retailio.email -DartifactId=email-service -Dversion=1.0.0-SNAPSHOT -Dpackage=com.retailio.email -DarchetypeGroupId=io.dropwizard.archetypes -DarchetypeArtifactId=java-simple -DinteractiveMode=true
 
+mvn install:install-file -Dfile=sendgrid-java-3.1.0-jar.jar -DgroupId=com.sendgrid -DartifactId=sendgrid -Dversion=3.1.0 -Dpackaging=jar 
+
 How to start the EmailService application
 ---
 

@@ -56,10 +56,10 @@ Since sendgrid does not provide the maven dependency for its jar, you need to fo
     > mvn install:install-file -Dfile=sendgrid-java-3.1.0-jar.jar -DgroupId=com.sendgrid -DartifactId=sendgrid -Dversion=3.1.0 -Dpackaging=jar 
  
 
-### Installation:
+## Installation:
 
 
-#### Build Project:
+### Build Project:
 To build the project, run following command:
 > mvn clean install
 
@@ -74,6 +74,9 @@ Build new docker image of email service using below commands.<br/>
 * #### Run Docker Image:
 To run the image, following command is used:<br/>
 >  sudo docker run -d -p 8080:8080 -p 8081:8081  email-service
+
+## How to test:
+Import emailserviceprovider.postman_collection.json from the project folder in postman application.
 
 ## Documentation:
 

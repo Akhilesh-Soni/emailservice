@@ -1,4 +1,4 @@
-package com.retailio.email.connector;
+package com.retailio.emailservice.connector;
 
 
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -6,26 +6,40 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.NotBlank;
 
-import javax.annotation.Nonnull;
-
+/**
+ * It contains following data for post request.<br>
+ * {@link #from}<br>
+ * {@link #to}<br>
+ * {@link #subject}<br>
+ * {@link #body}<br>
+ **/
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class EmailDto {
 
-    @Nonnull
+    /**
+     * Email address of the sender.
+     **/
     @NotBlank(message = "can not be blank.")
     private final String from;
 
-    @Nonnull
+    /**
+     * Email address of the recipient.
+     **/
     @NotBlank(message = "can not be blank.")
     private final String to;
 
-    @Nonnull
+    /**
+     * subject of the mail.
+     **/
     @NotBlank(message = "can not be blank.")
     private final String subject;
 
-    @Nonnull
+    /**
+     * body of the mail.
+     **/
     @NotBlank(message = "can not be blank.")
     private final String body;
+
 
     @JsonCreator
     public EmailDto(@JsonProperty("from") final String from,

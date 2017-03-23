@@ -1,21 +1,21 @@
-package com.retailio.email.util;
+package com.retailio.emailservice.util;
 
 
-import com.retailio.email.service.Provider;
-import com.retailio.email.service.ProviderFactory;
+import com.retailio.emailservice.serviceproviders.Provider;
+import com.retailio.emailservice.serviceproviders.ProviderFactory;
 
 import java.util.List;
 
 public class EmailRouter {
 
     private final List<Provider> providers = ProviderFactory.getPROVIDERS();
+    private static int count = 0;
+    public void routeEmail(EmailTask emailTask) {
 
-    public void routeEmail(Email email) {
 
-        int count = 0;
-        while (!providers.get(count).sendEmail()) {
+        while (!providers.get(count).sendEmail(emailTask.getEmailDto())) {
             try {
-                //Waiting for 2 Second
+                //Take 2 second pause.
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();

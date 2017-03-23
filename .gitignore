@@ -39,3 +39,4 @@ chromedriver
 out
 selenium_gui_tests/exception.png
 selenium_gui_tests/exception_css.png
+/README.md

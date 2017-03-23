@@ -1,8 +1,8 @@
-package com.retailio.email;
+package com.retailio.emailservice;
 
-import com.retailio.email.connector.EmailConnector;
-import com.retailio.email.handler.EmailHandler;
-import com.retailio.email.service.ProviderFactory;
+import com.retailio.emailservice.connector.EmailConnector;
+import com.retailio.emailservice.connector.EmailHandler;
+import com.retailio.emailservice.serviceproviders.ProviderFactory;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;

@@ -17,8 +17,8 @@ public class GoogleMail implements Provider {
     @Override
     public boolean sendEmail(final EmailDto emailDto) {
 
-        final String username = "testemailforcode@gmail.com";
-        final String password = "Test@123456";
+        final String username = "your gmail user name";
+        final String password = "your password";
 
 
         // Recipient's emailservice ID needs to be mentioned.
